@@ -72,3 +72,24 @@ echo $chien2->getCouleur();
 $chien2->setCouleur("rose");
 echo "<br>";
 echo $chien2->getCouleur();
+
+require "Chat.php";
+$chat1 = new Chat(2, "", "blanc");
+echo $chat1->miaule();
+var_dump($chat1);
+
+echo "<br>";
+// Pour utiliser une constante, on doit utiliser l'opérateur de portée :: 
+// cet opérateur fait référence à la class
+// Une constante est une information qui appartient à la class et non à un objet.
+echo Chien::CATEGORIE;
+echo "<br>";
+echo Chien::class;
+echo "<br>";
+// Une propriété ou une méthode statique est accessible à partir de la class avec l'opérateur de portée ::
+echo Chien::$type;
+echo "<br>";
+echo Chien::getType();
+echo "<br>";
+// On ne peut pas obtenir la valeur de CATEGORIE à partir d'un objet.
+echo $chat1->CATEGORIE;
