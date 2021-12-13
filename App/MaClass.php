@@ -1,5 +1,5 @@
 <?php
-
+namespace App;
 class MaClass {
     // Une class est constituée de propriétés (qui sont des variables) et de méthodes qui sont des fonctions
 

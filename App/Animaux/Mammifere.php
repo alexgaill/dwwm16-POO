@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Animaux;
 class Mammifere {
     /**
      * Age de l'animal

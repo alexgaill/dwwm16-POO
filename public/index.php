@@ -6,8 +6,15 @@
 //     require_once "$class.php";
 // });
 
-require "Autoloader.php";
-Autoloader::register();
+define("ROOT", dirname(__DIR__));
+
+// require ROOT. "/Core/Autoload/Autoloader.php";
+use App\MaClass;
+use App\Animaux\Chat;
+use App\Animaux\Chien;
+use Core\Autoload\Autoloader;
+// Autoloader::register();
+require ROOT."/vendor/autoload.php";
 
 $numb1 = 2;
 $numb2 = 6;
