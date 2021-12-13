@@ -1,5 +1,14 @@
 <?php
 
+//Création de l'autoloader
+
+// spl_autoload_register(function($class){
+//     require_once "$class.php";
+// });
+
+require "Autoloader.php";
+Autoloader::register();
+
 $numb1 = 2;
 $numb2 = 6;
 $numb3 = 13;
@@ -38,7 +47,7 @@ echo "<br>";
 echo $math->addition($numb1, $numb3);
 
 // Je charge le fichier contenant MaClass
-require "MaClass.php";
+// require "MaClass.php";
 // include "MaClass.php";
 echo "test";
 echo "<br>";
@@ -56,7 +65,7 @@ echo "<br>";
 // echo $maClass->propriete2;
 echo "<br>";
 
-require "Chien.php";
+// require "Chien.php";
 
 $chien1 = new Chien(3, "Lévrier", "Gris");
 $chien2 = new Chien(5, "Chihuahua", "Rose");
@@ -73,7 +82,7 @@ $chien2->setCouleur("rose");
 echo "<br>";
 echo $chien2->getCouleur();
 
-require "Chat.php";
+// require "Chat.php";
 $chat1 = new Chat(2, "", "blanc");
 echo $chat1->miaule();
 var_dump($chat1);

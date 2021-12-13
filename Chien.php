@@ -1,5 +1,5 @@
 <?php
-require_once "Mammifere.php";
+// require_once "Mammifere.php";
 class Chien extends Mammifere{
 
 
@@ -22,5 +22,9 @@ class Chien extends Mammifere{
     {
         // self fait référence à la classe dans celle-ci
         return self::$type;
+    }
+    public static function getCategorie()
+    {
+        return self::CATEGORIE;
     }
 }
