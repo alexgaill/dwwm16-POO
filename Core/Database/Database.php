@@ -16,6 +16,7 @@ class Database {
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION 
             // Permet de définir l'affichage des erreurs de nos requêtes SQL
         ]);
+        $this->pdo->exec("SET NAMES utf8");
     }
 
     /**

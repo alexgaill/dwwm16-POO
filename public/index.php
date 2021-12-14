@@ -7,4 +7,5 @@ define("ROOT", dirname(__DIR__));
 require ROOT. "/vendor/autoload.php";
 
 $manager = new ArticleManager();
-$manager->index();
+// $manager->index();
+$manager->single();
