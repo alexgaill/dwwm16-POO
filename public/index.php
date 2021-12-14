@@ -8,4 +8,5 @@ require ROOT. "/vendor/autoload.php";
 
 $manager = new ArticleManager();
 // $manager->index();
-$manager->single();
+// $manager->single();
+$manager->save();

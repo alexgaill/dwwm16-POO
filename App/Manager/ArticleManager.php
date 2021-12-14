@@ -29,4 +29,17 @@ class ArticleManager {
 
         include ROOT. "/templates/article/single.php";
     }
+
+    public function save()
+    {
+        if (!empty($_POST) && isset($_POST["title"]) && isset($_POST["content"])) {
+            $db = new Database();
+            $pdo = $db->getPDO();
+
+            $prepare = $pdo->prepare("INSERT INTO article (title, content, categorie_id) 
+            VALUES (:title, :content, 1)");
+            $prepare->execute($_POST);
+        }
+        include ROOT."/templates/article/save.php";
+    }
 }
