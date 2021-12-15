@@ -8,7 +8,7 @@ class Database {
     private $dbname = "blog";
     private $user = "root";
     private $pwd = "root";
-    private $pdo;
+    protected $pdo;
 
     public function __construct()
     {

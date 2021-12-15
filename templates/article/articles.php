@@ -11,7 +11,7 @@
 
     <ul>
         <?php foreach($articles as $article): ?>
-            <li><?= $article->title // <?= correspond à <?php echo ?></li>
+            <li><a href="?page=single&id=<?= $article->getId() ?>"><?= $article->getTitle() // <?= correspond à <?php echo ?></a></li>
         <?php endforeach; ?>
     </ul>
 </body>
