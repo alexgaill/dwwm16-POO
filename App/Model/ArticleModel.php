@@ -1,23 +1,15 @@
 <?php
 namespace App\Model;
 
-use Core\Database\Database;
+use Core\Model\DefaultModel;
 
-class ArticleModel extends Database{
+/**
+ * @method array findAll()
+ * @method Article find($id)
+ */
+class ArticleModel extends DefaultModel{
 
-    public function findAll()
-    {
-        $query = $this->pdo->query("SELECT * FROM article");
-        $query->setFetchMode(\PDO::FETCH_CLASS, "App\Entity\Article");
-        return $query->fetchAll();
-    }
-
-    public function find($id)
-    {
-        $query = $this->pdo->query("SELECT * FROM article WHERE id = $id");
-        $query->setFetchMode(\PDO::FETCH_OBJ);
-        return $query->fetch();
-    }
+    protected $table = "article";
 
     public function save($post)
     {

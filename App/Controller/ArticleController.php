@@ -21,11 +21,11 @@ class ArticleController extends DefaultController{
 
     public function single()
     {
-
         $model = new ArticleModel();
-        $article = $model->find($_GET["id"]);
 
-        include ROOT. "/templates/article/single.php";
+        $this->render("article/single", [
+            "article" => $model->find($_GET["id"])
+        ]);
     }
 
     public function save()
@@ -40,6 +40,7 @@ class ArticleController extends DefaultController{
                 header("Location: index.php?page=save");
             }
         }
-        include ROOT."/templates/article/save.php";
+        $this->render("article/save");
+        
     }
 }
