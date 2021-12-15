@@ -3,9 +3,10 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Model\ArticleModel;
+use Core\Controller\DefaultController;
 use Core\Database\Database;
 
-class ArticleController {
+class ArticleController extends DefaultController{
 
 
     public function index()
@@ -13,7 +14,9 @@ class ArticleController {
         $model = new ArticleModel();
         $articles = $model->findAll();
 
-        include ROOT."/templates/article/articles.php";
+        $this->render("article/articles", [
+            "articles" => $articles
+        ]);
     }
 
     public function single()
