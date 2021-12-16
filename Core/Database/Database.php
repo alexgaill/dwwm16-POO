@@ -12,11 +12,16 @@ class Database {
 
     public function __construct()
     {
-        $this->pdo = new \PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pwd, [
-            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION 
-            // Permet de définir l'affichage des erreurs de nos requêtes SQL
-        ]);
-        $this->pdo->exec("SET NAMES utf8");
+        try {
+            $this->pdo = new \PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pwd, [
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION 
+                // Permet de définir l'affichage des erreurs de nos requêtes SQL
+            ]);
+            $this->pdo->exec("SET NAMES utf8");
+        } catch (\PDOException $e) {
+            $e->getMessage();
+        }
+        
     }
 
     /**
