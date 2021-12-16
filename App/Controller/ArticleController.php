@@ -13,7 +13,6 @@ class ArticleController extends DefaultController{
     {
         $model = new ArticleModel();
         $articles = $model->findAll();
-
         $this->render("article/articles", [
             "articles" => $articles
         ]);

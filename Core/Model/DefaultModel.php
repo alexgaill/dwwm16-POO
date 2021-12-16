@@ -19,7 +19,7 @@ class DefaultModel extends Database {
             if (is_bool($result)) {
                 throw new \Exception("Erreur: Les données n'ont pas été récupérées", 400);
             }
-            return $query->fetchAll();
+            return $result;
         } catch (\Exception $e) {
             var_dump($e->getMessage());
         }
