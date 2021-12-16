@@ -7,7 +7,7 @@ use Core\Model\DefaultModel;
  * @method array findAll()
  * @method Article find($id)
  */
-class ArticleModel extends DefaultModel{
+final class ArticleModel extends DefaultModel{
 
     protected $table = "article";
 
