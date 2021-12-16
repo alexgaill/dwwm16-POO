@@ -1,7 +1,11 @@
 <?php
 namespace Core\Database;
 
-class Database {
+/**
+ * Une class abstraite est une class qui a la particularité d'avoir des méthodes abstraites.
+ * Une class abstraite ne peut pas être instanciée car les méthodes abstraites ne sont pas définies.
+ */
+abstract class Database {
 
 
     private $host = "localhost:8889";
@@ -33,5 +37,17 @@ class Database {
     {
         return $this->pdo;
     }
+
+    /**
+     * Une méthode abstraite est une méthode à définir chez les enfants de cette class. 
+     * Ce sont des méthodes obligatoires dont on considère l'importance de les implémenter
+     * car essentielles au bon fonctionnement d'un module où d'une fonctionnalité par la suite.
+     *
+     * @return void
+     */
+    abstract public function findAll();
+    abstract public function find($id);
+    abstract public function findBy();
+    abstract public function findOneBy();
 
 }

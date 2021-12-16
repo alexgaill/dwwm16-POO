@@ -32,4 +32,14 @@ class DefaultModel extends Database {
         $query->setFetchMode(\PDO::FETCH_CLASS, "App\Entity\\". ucfirst($this->table));
         return $query->fetch();
     }
+
+    public function findBy()
+    {
+        
+    }
+
+    public function findOneBy()
+    {
+        
+    }
 }
